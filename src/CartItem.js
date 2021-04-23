@@ -12,12 +12,23 @@ class CartItem extends React.Component {
     // this.increaseQuantity = this.increaseQuantity.bind(this);
   }
 
-//   increaseQuantity = function(){
-//     console.log('this', this.state);
-//   }
 
   increaseQuantity = () => {
-    console.log('this', this.state);
+    // this.state.qty += 1;   // This will increase the value but not update the data in component
+    // console.log('this', this.state);
+
+    // If setState() is called, then component is rerendered after updating values
+            // setState form 1  -- Use if previous state data is not required eg. title
+    // this.setState({
+    //   qty: this.state.qty + 1
+    // });
+
+            // setState form 2 - if prevState required use this
+    this.setState((prevState) => {
+        return {
+          qty: prevState.qty + 1
+        }
+      });
   }
 
   render () {
@@ -37,14 +48,7 @@ class CartItem extends React.Component {
               alt="increase"
               className="action-icons"
               src="https://image.flaticon.com/icons/svg/992/992651.svg"
-            //   1) Either bind this here and use normal function in class
-            //   onClick={this.increaseQuantity.bind(this)}
-
-            // 2) Or bind in constructor itself and create property and use normal function in class
-            // onClick={this.increaseQuantity}
-
-            // 3) Or use arrow function to bind this automatically
-            onClick={this.increaseQuantity}
+              onClick={this.increaseQuantity}
 
             />
             <img
