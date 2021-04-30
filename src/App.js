@@ -18,6 +18,9 @@ class App extends React.Component {
   componentDidMount() {
     this.db
       .collection("products")
+      // .where('price', '==', 999)
+      // .where('title', '==', 'Mug')
+      .orderBy('price', 'desc')  // Sort in desc order. asc -->> in asc order
       .onSnapshot(snapshot => {  // onSnapshot func is called whenever data changes in firebase
         const products = snapshot.docs.map(doc => {
           const data = doc.data();
@@ -99,7 +102,7 @@ class App extends React.Component {
       .catch(err => {
         console.log(err);
       });
-      
+
   }
 
   getCartCount = () => {
