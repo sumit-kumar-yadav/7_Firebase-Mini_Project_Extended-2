@@ -1,10 +1,11 @@
 import React from 'react';
+import cartIcon from './icons/carts.png';
 
 const Navbar = (props) => {
   return (
     <div style={styles.nav}>
       <div style={styles.cartIconContainer}>
-        <img style={styles.cartIcon} src="https://image.flaticon.com/icons/svg/2121/2121815.svg" alt="cart-icon" />
+        <img style={styles.cartIcon} src={cartIcon} alt="cart-icon" />
         <span style={styles.cartCount}> {props.count} </span>
       </div>
     </div>

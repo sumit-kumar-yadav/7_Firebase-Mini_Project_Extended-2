@@ -1,4 +1,7 @@
 import React from 'react';
+import increaseIcon from './icons/plus.png';
+import decreaseIcon from './icons/minus.png';
+import deleteIcon from './icons/delete.png';
 
 const CartItem = (props) => {
   const { price, title, qty } = props.product;
@@ -22,19 +25,19 @@ const CartItem = (props) => {
           <img
             alt="increase"
             className="action-icons"
-            src="https://image.flaticon.com/icons/svg/992/992651.svg"
+            src={increaseIcon}
             onClick={() => onIncreaseQuantity(product)}
           />
           <img
             alt="decrease"
             className="action-icons"
-            src="https://image.flaticon.com/icons/svg/1665/1665612.svg"
+            src={decreaseIcon}
             onClick={() => onDecreaseQuantity(product)}
           />
           <img
             alt="delete"
             className="action-icons"
-            src="https://image.flaticon.com/icons/svg/1214/1214428.svg"
+            src={deleteIcon}
             onClick={() => onDeleteProduct(product.id)}
           />
         </div>

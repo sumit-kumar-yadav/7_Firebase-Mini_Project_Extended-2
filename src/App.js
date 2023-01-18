@@ -138,9 +138,9 @@ class App extends React.Component {
     this.db
       .collection("products")
       .add({
-        img: "",
+        img: "https://media.istockphoto.com/id/172485535/photo/washing-machine.jpg?s=612x612&w=0&k=20&c=heH0vH2hfuP7QLt4lGQvILj61sD5iuzs8sZk_izSazc=",
         price: 900,
-        qty: 3,
+        qty: 1,
         title: "Washing Machine"
       })
       .then(docRef => {
